@@ -8,6 +8,8 @@
     </p>
     <div v-for="(option,index) in options" :key="index" v-show="option.active">
       <h3>{{option.group}}</h3>
+      <h4 v-if="option.categories.length%2!=0">Group with: {{option.categories.length}} categories is odd</h4>
+      <h4 v-if="option.categories.length%2==0">Group with: {{option.categories.length}} categories is even</h4>
       <ul>
         <li v-for="(category,index) in option.categories" :key="index">
             <a :href="category.href" :title="category.title">{{category.text}}</a>
