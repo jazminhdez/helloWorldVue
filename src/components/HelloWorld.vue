@@ -6,7 +6,7 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <div v-for="(option,index) in options" :key="index">
+    <div v-for="(option,index) in options" :key="index" v-show="option.active">
       <h3>{{option.group}}</h3>
       <ul>
         <li v-for="(category,index) in option.categories" :key="index">
@@ -38,7 +38,8 @@ export default {
             href:'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint',
             title:'ESlint documentation'
           }
-        ]
+        ],
+        active:true
         },
         {
           group:'Essential Links',
@@ -73,7 +74,8 @@ export default {
               href:'',
               title:''
             }
-          ]
+          ],
+          active:false
         },
         {
           group:'Ecosystem',
@@ -103,7 +105,8 @@ export default {
               href:'https://github.com/vuejs/awesome-vue',
               title:'vue Awesome'
             }
-          ]
+          ],
+          active:true
         }
       ]
     }
